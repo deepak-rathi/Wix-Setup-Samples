@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The name of the product -->
+<?define Name = "Sample Application" ?>
+<!-- The Description of the product -->
+<?define Description = "Sample Application is a WPF desktop application." ?>
+<!-- The manufacturer, for setup package publisher and folder info -->
+<?define Manufacturer = "Sample Company Name" ?>
+<!-- The version number of this setup package-->
+<?define Version = "1.0.0" ?>
+<!-- UpgradeCode must be unique and not changed once the first version of the program is installed. -->
+<?define UpgradeCode = "{25DA3824-3F14-4040-826B-F8D1783E1288}" ?>
+<!-- The name of the Cabinet -->
+<?define CabName = "SampleApplication.cab" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!--Variable for Sample Application Directory-->
+  <?define Sample_Application_TargetDir=$(var.SampleApplication.TargetDir)?>
+
+  <Product Id="*" Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Version="$(var.Version)" Language="1033">
+
+    <!--Setup or Installer with properties-->
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perUser" InstallPrivileges="limited" Description="$(var.Name)" Manufacturer="$(var.Manufacturer)" />
+
+    <!--Application logo-->
+    <Icon Id="Logo.ico" SourceFile="$(var.SampleApplication.TargetDir)\logo.ico" />
+
+    <!--Application logo for Control Panel-->
+    <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
+
+    <!--Embed Cabinet into single msi file-->
+    <Media Id="1" Cabinet="$(var.CabName)" EmbedCab="yes" />
+
+    <!-- Allow upgrades and prevent downgrades -->
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <!--Main Feature for this Setup which can be found in Fragment Tag with ComponentGroupRef Id-->
+    <Feature Id="ProductFeature" Title="$(var.Name)" Level="1">
+      <!--Main application executable component-->
+      <ComponentGroupRef Id="ProductComponents" />
+      <!--Main application shortcut for Program Menu-->
+      <ComponentRef Id="ApplicationShortcut" />
+      <!--Desktop shortcut-->
+      <ComponentGroupRef Id="ComponentGroupDesktopShortcut" />
+    </Feature>
+  </Product>
+
+  <!--Fragment with details of installation directory-->
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <!-- Create a folder inside program files with Company Name-->
+        <Directory Id="ROOTDIRECTORY" Name="$(var.Manufacturer)">
+          <!-- Create a folder inside Company Name folder with Product Name-->
+          <Directory Id="INSTALLFOLDER" Name="$(var.Name)">
+            <Directory Id="DesktopFolder" Name="DesktopFolder" />
+          </Directory>
+        </Directory>
+      </Directory>
+      <!--Create application folder in Program Menu-->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <!--Main Feature Fragment with Sample application executable-->
+  <Fragment>
+    <!--ComponentGroup refering to install component in INSTALLFOLDER Directory-->
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!--Main Component with Sample Application executable path-->
+      <Component Id="Sample_Application.exe" Guid="*">
+        <File Id="Sample_Application.exe" Name="Sample Application.exe" Source="$(var.Sample_Application_TargetDir)Sample Application.exe" />
+        <!-- Remove all files from the INSTALLFOLDER on uninstall -->
+        <RemoveFile Id="ALLFILES" Name="*.*" On="both" />
+      </Component>
+      <!--Component with config file of sample application-->
+      <Component Id="Sample_Application.exe.config" Guid="*">
+        <File Id="Sample_Application.exe.config" Name="Sample Application.exe.config" Source="$(var.Sample_Application_TargetDir)Sample Application.exe.config" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <!--Create application shortcut in Program Menu-->
+      <Component Id="ApplicationShortcut" Guid="*">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="$(var.Name)" Description="$(var.Description)" Icon="Logo.ico" Target="[#Sample_Application.exe]" WorkingDirectory="INSTALLFOLDER" />
+        <!--Remove application shortcut from Program Menu on uninstall-->
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+        <!--Create application registry entry-->
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.Manufacturer)\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <!--Desktop Shortcut-->
+    <ComponentGroup Id="ComponentGroupDesktopShortcut">
+      <Component Id="ComponentDesktopShortcut" Guid="*" Directory="DesktopFolder" >
+        <Shortcut Id="AppDesktopShortcut"
+                  Name="$(var.Name)"
+                  Description="$(var.Description)"
+                  Directory="DesktopFolder"
+                  Target="[#Sample_Application.exe]"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <!--Remove desktop shortcut on uninstall-->
+        <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\$(var.Manufacturer)\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

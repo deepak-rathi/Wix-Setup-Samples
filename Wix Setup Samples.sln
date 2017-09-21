@@ -1,0 +1,121 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample Application", "Sample Application", "{47915455-E43E-46D4-BF9D-7A910F92939F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Wix Simple Setup", "1. Wix Simple Setup", "{E2DB2D7F-5813-4657-B42C-31F7D2BBDDA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Wix Simple Setup With Digital Signing", "2. Wix Simple Setup With Digital Signing", "{6448BC3C-FB0C-45F0-B9AA-CFF81073DEAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Wix Simple Setup With Start Menu Shortcut", "3. Wix Simple Setup With Start Menu Shortcut", "{B8C64673-FE7A-4DF8-AE56-C24E69E9D650}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Wix Simple Setup With Desktop Shortcut", "4. Wix Simple Setup With Desktop Shortcut", "{009AD4C3-D953-43B4-A0CE-50B6EAD18B2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Wix Simple Setup Per Machine Installer", "5. Wix Simple Setup Per Machine Installer", "{9978023A-51B1-4EAB-8F13-4694A972D09C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Wix Simple Setup Per User Installer", "6. Wix Simple Setup Per User Installer", "{35D0BF9B-C716-4B2D-9A12-EB6033723374}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Wix Simple Complete Setup With UI Image Banners", "7. Wix Simple Complete Setup With UI Image Banners", "{71E9BBEB-86B6-4A1C-91F1-4C5B9CCC5891}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Wix Advanced Setup With Simple Bootstrap Project", "8. Wix Advanced Setup With Simple Bootstrap Project", "{192FFE00-E15F-498E-9CD0-87E721043C23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Wix Advanced Setup With Dependecy Installation", "9. Wix Advanced Setup With Dependecy Installation", "{1940AB99-7175-41B6-8F43-1F0517C3DBEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Wix Advanced Setup With Custom Action", "10. Wix Advanced Setup With Custom Action", "{5C2FD7C3-9941-4A6A-9239-2C9D26825361}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. Wix Advanced Setup With Modern UI", "11. Wix Advanced Setup With Modern UI", "{B533E81A-D5E4-4500-9272-AA2F3077817D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication", "Sample Application\Sample Application\SampleApplication.csproj", "{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup", "1. Wix Simple Setup\Wix Simple Setup\Wix Simple Setup.wixproj", "{9EEBF589-37B3-48D6-A912-96E5125FCB6B}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup With Digital Signing", "2. Wix Simple Setup With Digital Signing\Wix Simple Setup With Digital Signing\Wix Simple Setup With Digital Signing.wixproj", "{C99B223B-2C1C-47A0-981E-0C882821184D}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup StartMenu Shortcut", "3. Wix Simple Setup With Start Menu Shortcut\Wix Simple Setup StartMenu Shortcut\Wix Simple Setup StartMenu Shortcut.wixproj", "{47E54C08-523E-4864-A1ED-D3A8B1AE2439}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup With Desktop Shortcut", "4. Wix Simple Setup With Desktop Shortcut\Wix Simple Setup With Desktop Shortcut\Wix Simple Setup With Desktop Shortcut.wixproj", "{27B251E7-571E-4B02-81AA-371E7361FAF8}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup Per Machine Installer", "5. Wix Simple Setup Per Machine Installer\Wix Simple Setup Per Machine Installer\Wix Simple Setup Per Machine Installer.wixproj", "{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup PerUser Installer", "6. Wix Simple Setup Per User Installer\Wix Simple Setup PerUser Installer\Wix Simple Setup PerUser Installer.wixproj", "{FED9416F-F622-4120-85BC-8E5B183C89A1}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Complete Setup", "7. Wix Simple Complete Setup With UI Image Banners\Wix Simple Complete Setup\Wix Simple Complete Setup.wixproj", "{580F8EB8-6D8C-4235-BD66-848439114A31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Debug|x86.Build.0 = Debug|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4}.Release|x86.Build.0 = Release|Any CPU
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B}.Debug|x86.ActiveCfg = Debug|x86
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B}.Debug|x86.Build.0 = Debug|x86
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B}.Release|Any CPU.ActiveCfg = Release|x86
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B}.Release|x86.ActiveCfg = Release|x86
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B}.Release|x86.Build.0 = Release|x86
+		{C99B223B-2C1C-47A0-981E-0C882821184D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C99B223B-2C1C-47A0-981E-0C882821184D}.Debug|x86.ActiveCfg = Debug|x86
+		{C99B223B-2C1C-47A0-981E-0C882821184D}.Debug|x86.Build.0 = Debug|x86
+		{C99B223B-2C1C-47A0-981E-0C882821184D}.Release|Any CPU.ActiveCfg = Release|x86
+		{C99B223B-2C1C-47A0-981E-0C882821184D}.Release|x86.ActiveCfg = Release|x86
+		{C99B223B-2C1C-47A0-981E-0C882821184D}.Release|x86.Build.0 = Release|x86
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439}.Debug|x86.ActiveCfg = Debug|x86
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439}.Debug|x86.Build.0 = Debug|x86
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439}.Release|Any CPU.ActiveCfg = Release|x86
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439}.Release|x86.ActiveCfg = Release|x86
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439}.Release|x86.Build.0 = Release|x86
+		{27B251E7-571E-4B02-81AA-371E7361FAF8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{27B251E7-571E-4B02-81AA-371E7361FAF8}.Debug|x86.ActiveCfg = Debug|x86
+		{27B251E7-571E-4B02-81AA-371E7361FAF8}.Debug|x86.Build.0 = Debug|x86
+		{27B251E7-571E-4B02-81AA-371E7361FAF8}.Release|Any CPU.ActiveCfg = Release|x86
+		{27B251E7-571E-4B02-81AA-371E7361FAF8}.Release|x86.ActiveCfg = Release|x86
+		{27B251E7-571E-4B02-81AA-371E7361FAF8}.Release|x86.Build.0 = Release|x86
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}.Debug|x86.ActiveCfg = Debug|x86
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}.Debug|x86.Build.0 = Debug|x86
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}.Release|Any CPU.ActiveCfg = Release|x86
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}.Release|x86.ActiveCfg = Release|x86
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848}.Release|x86.Build.0 = Release|x86
+		{FED9416F-F622-4120-85BC-8E5B183C89A1}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{FED9416F-F622-4120-85BC-8E5B183C89A1}.Debug|x86.ActiveCfg = Debug|x86
+		{FED9416F-F622-4120-85BC-8E5B183C89A1}.Debug|x86.Build.0 = Debug|x86
+		{FED9416F-F622-4120-85BC-8E5B183C89A1}.Release|Any CPU.ActiveCfg = Release|x86
+		{FED9416F-F622-4120-85BC-8E5B183C89A1}.Release|x86.ActiveCfg = Release|x86
+		{FED9416F-F622-4120-85BC-8E5B183C89A1}.Release|x86.Build.0 = Release|x86
+		{580F8EB8-6D8C-4235-BD66-848439114A31}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{580F8EB8-6D8C-4235-BD66-848439114A31}.Debug|x86.ActiveCfg = Debug|x86
+		{580F8EB8-6D8C-4235-BD66-848439114A31}.Debug|x86.Build.0 = Debug|x86
+		{580F8EB8-6D8C-4235-BD66-848439114A31}.Release|Any CPU.ActiveCfg = Release|x86
+		{580F8EB8-6D8C-4235-BD66-848439114A31}.Release|x86.ActiveCfg = Release|x86
+		{580F8EB8-6D8C-4235-BD66-848439114A31}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38F6C9EA-8E3F-4AB7-A242-FEB4507F0BF4} = {47915455-E43E-46D4-BF9D-7A910F92939F}
+		{9EEBF589-37B3-48D6-A912-96E5125FCB6B} = {E2DB2D7F-5813-4657-B42C-31F7D2BBDDA8}
+		{C99B223B-2C1C-47A0-981E-0C882821184D} = {6448BC3C-FB0C-45F0-B9AA-CFF81073DEAB}
+		{47E54C08-523E-4864-A1ED-D3A8B1AE2439} = {B8C64673-FE7A-4DF8-AE56-C24E69E9D650}
+		{27B251E7-571E-4B02-81AA-371E7361FAF8} = {009AD4C3-D953-43B4-A0CE-50B6EAD18B2F}
+		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848} = {9978023A-51B1-4EAB-8F13-4694A972D09C}
+		{FED9416F-F622-4120-85BC-8E5B183C89A1} = {35D0BF9B-C716-4B2D-9A12-EB6033723374}
+		{580F8EB8-6D8C-4235-BD66-848439114A31} = {71E9BBEB-86B6-4A1C-91F1-4C5B9CCC5891}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D26EEC7-F352-4621-A6E2-A09A38833E35}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The name of the product -->
+<?define Name = "Sample Application" ?>
+<!-- The manufacturer, for setup package publisher and folder info -->
+<?define Manufacturer = "Sample Company Name" ?>
+<!-- The version number of this setup package-->
+<?define Version = "1.0.0" ?>
+<!-- Bundle logo-->
+<?define Logo = "Resources\logo.ico" ?>
+<!-- UpgradeCode must be unique and not changed once the first version of the program is installed. -->
+<?define UpgradeCode = "{371c6fa7-b905-46f5-a14c-a136bbd737de}" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Bundle Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Version="$(var.Version)" IconSourceFile="$(var.Logo)">
+    
+    <!--Bootstrapper UI with EULA and logo-->
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
+      <bal:WixStandardBootstrapperApplication LicenseUrl="" LogoFile="$(var.Logo)" SuppressOptionsUI ="yes" SuppressRepair="yes"/>
+    </BootstrapperApplicationRef>
+    
+    <Chain DisableSystemRestore="yes">
+      <!--Installs .Net Framework 4.5.2 using web installer-->
+      <PackageGroupRef Id="NetFx452Web" />
+      
+      <!--Any other dependency executable or setup goes here-->
+      
+      <!--Installs Sample application using msi Setup from Project 7. Wix Simple Complete Setup With UI Image Banners.-->
+      <MsiPackage DisplayName="$(var.Name)" SourceFile="$(var.Wix Simple Complete Setup.TargetPath)" Compressed="yes" Vital="yes"/>
+  
+    </Chain>
+  </Bundle>
+</Wix>

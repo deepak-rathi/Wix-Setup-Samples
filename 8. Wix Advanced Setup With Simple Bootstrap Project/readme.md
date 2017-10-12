@@ -1,20 +1,22 @@
 # 8. Wix Advanced Setup With Simple Bootstrap Project
-
-# ---------Need Help!!!----------
+Wix Advanced Setup With Simple Bootstrap is a Wix Bootstrapper project with basic backbone to install "Sample Application" along with .Net Framework 4.5.2 using webinstaller. Motive of the setup to provide basic knowledge of Wix Toolset Setup to beginners or newbie.
 
 # Features!
+- Bootstrapper 
+  - Install .net Framework 4.5.2 using web installer and then install Simple Application using Main Setup msi
+  - Bootstrapper setup with logo, No License text.
+  - Bootstrapper with suppressed options UI and suppressed repair UI
+- Main Setup
   - Product.wxs with useful comments.
   - Install "Sample Application.exe"
   - UnInstall "Sample Application" from control panel.
   - Desktop Shortcut, Start Menu Shortcut, Application Icon.
   - Welcome ui with logo, top banner logo, option to select installation folder and launch installed application after installation.
   - Application Icon in control panel.
-  - Check if .Net Framework 4.5.2 version is installed or not. If not show message and exit
-  - Install .net Framework 4.5.2 in Bootstrap project.
-  - Bootstrap project with custom UI like logo, eula, etc.
+  - Checks if .Net Framework 4.5.2 version is installed or not. If not show message and exit
 
 Philosophy
->Share your thought here
+>Educators can and should establish networks to share practices, access experts, and solve problems. -Todd Whitaker, What Connected Educators Do Differently
 
 ### Installing Wix Toolset
 
@@ -36,15 +38,42 @@ Intial guide or manual to get started with Wix Toolset and some useful links fro
 | How To Guides | http://wixtoolset.org/documentation/manual/v3/howtos/ |
 | Complete Manual | http://wixtoolset.org/documentation/manual/v3/ |
 | Tutorials | https://www.firegiant.com/wix/tutorial/ |
+| ------ | ------ |
+| Bootstrapping | https://www.firegiant.com/wix/tutorial/net-and-net/bootstrapping/ |
+| Bal Extension | http://wixtoolset.org/documentation/manual/v3/xsd/bal/wixstandardbootstrapperapplication.html |
+| WiX Standard Bootstrapper Application | http://wixtoolset.org/documentation/manual/v3/bundle/wixstdba/ |
+| Using Project References and Variables | http://wixtoolset.org/documentation/manual/v3/votive/votive_project_references.html |
+| How To: Install the .NET Framework Using Burn | http://wixtoolset.org/documentation/manual/v3/howtos/redistributables_and_install_checks/install_dotnet.html |
 
 #### Let's get started
 
 Code to look for is as below:
 ```sh
-  Highlight the changes from code here.
+<?define Logo = "Resources\logo.ico" ?>
 ```
 
+Defined ```Logo``` variable with ```logo.ico``` image from Resources folder
+
 ```sh
+<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
+    <bal:WixStandardBootstrapperApplication LicenseUrl="" LogoFile="$(var.Logo)" SuppressOptionsUI ="yes" SuppressRepair="yes"/>
+</BootstrapperApplicationRef>
+```
+
+```LicenseUrl ``` is kept empty such that no license is displayed for bootstrapper setup.
+```LogoFile ``` is logo for bootstrapper setup and not for the application.
+```SuppressOptionUI ``` removes option button allowing user to select installation loaction from bootstrapper setup project.
+
+```sh
+<PackageGroupRef Id="NetFx452Web" />
+```
+```NetFx452Web```Installs .Net Framework 4.5.2 using web installer, for more option see Wix documentation at http://wixtoolset.org/documentation/manual/v3/customactions/wixnetfxextension.html
+
+```Add Setup from previous project 7. Wix Simple Complete Setup With UI Image Banners. to reference```
+```sh
+<MsiPackage DisplayName="$(var.Name)" SourceFile="$(var.Wix Simple Complete Setup.TargetPath)" Compressed="yes" Vital="yes"/>
+```
+```Above code will install main setup created in previous project 7. Wix Simple Complete Setup With UI Image Banners.```
 
 ### Todos
 

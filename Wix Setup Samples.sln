@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample Application", "Sample Application", "{47915455-E43E-46D4-BF9D-7A910F92939F}"
 EndProject
@@ -42,6 +42,10 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Setup PerUser Installer", "6. Wix Simple Setup Per User Installer\Wix Simple Setup PerUser Installer\Wix Simple Setup PerUser Installer.wixproj", "{FED9416F-F622-4120-85BC-8E5B183C89A1}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Simple Complete Setup", "7. Wix Simple Complete Setup With UI Image Banners\Wix Simple Complete Setup\Wix Simple Complete Setup.wixproj", "{580F8EB8-6D8C-4235-BD66-848439114A31}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Advanced Bootstrapper Setup", "8. Wix Advanced Setup With Simple Bootstrap Project\Wix Advanced Bootstrapper Setup\Wix Advanced Bootstrapper Setup.wixproj", "{371C6FA7-B905-46F5-A14C-A136BBD737DE}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Wix Advanced Bootstrapper Setup Complete", "9. Wix Advanced Setup With Dependecy Installation\Wix Advanced Bootstrapper Setup 2\Wix Advanced Bootstrapper Setup Complete.wixproj", "{784D0AC4-BB10-4A63-A437-C21113B69C97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +105,18 @@ Global
 		{580F8EB8-6D8C-4235-BD66-848439114A31}.Release|Any CPU.ActiveCfg = Release|x86
 		{580F8EB8-6D8C-4235-BD66-848439114A31}.Release|x86.ActiveCfg = Release|x86
 		{580F8EB8-6D8C-4235-BD66-848439114A31}.Release|x86.Build.0 = Release|x86
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE}.Debug|x86.ActiveCfg = Debug|x86
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE}.Debug|x86.Build.0 = Debug|x86
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE}.Release|Any CPU.ActiveCfg = Release|x86
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE}.Release|x86.ActiveCfg = Release|x86
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE}.Release|x86.Build.0 = Release|x86
+		{784D0AC4-BB10-4A63-A437-C21113B69C97}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{784D0AC4-BB10-4A63-A437-C21113B69C97}.Debug|x86.ActiveCfg = Debug|x86
+		{784D0AC4-BB10-4A63-A437-C21113B69C97}.Debug|x86.Build.0 = Debug|x86
+		{784D0AC4-BB10-4A63-A437-C21113B69C97}.Release|Any CPU.ActiveCfg = Release|x86
+		{784D0AC4-BB10-4A63-A437-C21113B69C97}.Release|x86.ActiveCfg = Release|x86
+		{784D0AC4-BB10-4A63-A437-C21113B69C97}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +130,8 @@ Global
 		{B0398EA6-AA04-4C7E-9EC6-DE351AABC848} = {9978023A-51B1-4EAB-8F13-4694A972D09C}
 		{FED9416F-F622-4120-85BC-8E5B183C89A1} = {35D0BF9B-C716-4B2D-9A12-EB6033723374}
 		{580F8EB8-6D8C-4235-BD66-848439114A31} = {71E9BBEB-86B6-4A1C-91F1-4C5B9CCC5891}
+		{371C6FA7-B905-46F5-A14C-A136BBD737DE} = {192FFE00-E15F-498E-9CD0-87E721043C23}
+		{784D0AC4-BB10-4A63-A437-C21113B69C97} = {1940AB99-7175-41B6-8F43-1F0517C3DBEE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D26EEC7-F352-4621-A6E2-A09A38833E35}

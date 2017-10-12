@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The name of the product -->
+<?define Name = "Sample Application" ?>
+<!-- The manufacturer, for setup package publisher and folder info -->
+<?define Manufacturer = "Sample Company Name" ?>
+<!-- The version number of this setup package-->
+<?define Version = "1.0.0" ?>
+<!-- Bundle logo-->
+<?define Logo = "Resources\logo.ico" ?>
+<!-- Bundle EULA rtf document-->
+<?define Eula = "Resources\eula.rtf" ?>
+<!-- UpgradeCode must be unique and not changed once the first version of the program is installed. -->
+<?define UpgradeCode = "{11281C8C-9A92-4AE9-B0F7-FF70C990A4C0}" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Bundle Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Version="$(var.Version)" IconSourceFile="$(var.Logo)">
+
+    <!--Bootstrapper UI with EULA and logo-->
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <bal:WixStandardBootstrapperApplication LicenseFile="$(var.Eula)" LogoFile="$(var.Logo)" SuppressOptionsUI ="yes" SuppressRepair="yes"/>
+    </BootstrapperApplicationRef>
+
+    <!-->net Framework 4.5.2 offline installer-->
+    <PayloadGroup Id="NetFx452RedistPayload">
+      <Payload Name="redist\NDP452-KB2901907-x86-x64-AllOS-ENU.exe"
+               SourceFile="Resources\NDP452-KB2901907-x86-x64-AllOS-ENU.exe"/>
+    </PayloadGroup>
+
+    <Chain>
+      <!--Installs .Net Framework 4.5.2-->
+      <PackageGroupRef Id="NetFx452Redist" />
+
+      <!--Any other dependency executable or setup goes here-->
+
+      <!--Installs Sample application using msi Setup from Project 7. Wix Simple Complete Setup With UI Image Banners.-->
+      <MsiPackage DisplayName="$(var.Name)" SourceFile="$(var.Wix Simple Complete Setup.TargetPath)" DisplayInternalUI="yes" Compressed="yes" Vital="yes"/>
+
+    </Chain>
+  </Bundle>
+</Wix>
